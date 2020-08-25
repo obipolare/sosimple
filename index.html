@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-scass/normalize.css">
+    <link rel="stylesheet" href="css-scass/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Project-1</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <ul class="main-menu">
+                <headerlist v-for="head in header" :name="head.title" :url="head.url" :key="head.id"></headerlist>
+            </ul>
+        </header>
+        <main class="main-container">
+            <section>
+                <articles v-for="article in articles" :title="article.title" :description="article.description"
+                    :image="article.image" :key="article.id"></articles>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>all reserved rights &copy</p>
+        </footer>
+    </div>
+    <script type="text/x-template" id="headerlist-template">
+        <li class="main-menu__item">
+            <a class="main-menu__link" target="_blank" :href="url">{{name}}</a>
+        </li>
+    </script>
+
+    <script type="text/x-template" id="articles-template">
+        <article class="article">
+            <h2>{{title}}</h2>
+            <p>{{description}}</p>
+            <img class="images" v-bind:src="image" alt="weathering with you">
+        </article>
+    </script>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
