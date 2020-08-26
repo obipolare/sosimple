@@ -28,7 +28,8 @@
             </section>
         </main>
         <aside class="aside">
-            <input type="text" type="search" v-model="search">
+            <label for="search">Search</label>
+            <input class="search" type="search" v-model="search">
         </aside>
         <footer class="footer">
             <p>all reserved rights &copy</p>
@@ -45,13 +46,7 @@
         </article>
     </script>
 
-    <script>
-        const articles = {
-            props: ['title', 'description', 'image'],
-            template: '#article-template'
-
-        }
-    </script>
+    <script src="component/articles-component.js"></script>
     <script src="component/scripts.js"></script>
 </body>
 
