@@ -1,10 +1,10 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: brown;
+    background-color: #b33939;
 }
 
 :root {
-    --ba-color: #fbc531;
+    --ba-color: #ffb142;
 }
 
 header {
