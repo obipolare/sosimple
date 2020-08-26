@@ -7,7 +7,7 @@ body {
     --ba-color: #ffb142;
 }
 
-header {
+.header {
     display: flex;
     justify-content: center;
 }
@@ -42,7 +42,7 @@ header {
 /*content*/
 
 .main-container {
-    width: 75%;
+    width: 70%;
     margin: auto;
 }
 
@@ -52,6 +52,7 @@ header {
     padding: 15px;
     font-size: 1rem;
     background-color: var(--ba-color);
+    text-align: justify;
 }
 
 .images {
@@ -60,6 +61,11 @@ header {
     width: 500px;
 }
 
+/* aside */
+
+.class {
+    display: flex;
+}
 
 /* footer */
 
@@ -75,9 +81,11 @@ header {
 
 
 
+
 @media (max-width:850px) {
+
     .main-menu {
-        width: 95%;
+
         height: auto;
         flex-direction: column;
     }
@@ -85,10 +93,11 @@ header {
     .main-menu__item {}
 
     .main-menu__link {
-        padding: 15px 21px;
+        padding: 15px 50px;
         flex-grow: 1;
         text-align: center;
     }
+
 
     /* content */
 

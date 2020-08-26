@@ -4,37 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css-scass/normalize.css">
-    <link rel="stylesheet" href="css-scass/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
+    <link rel="stylesheet" href="css-scss/normalize.css">
+    <link rel="stylesheet" href="css-scss/styles.css">
     <title>Project-1</title>
 </head>
 
 <body>
     <div id="app">
-        <header>
-            <ul class="main-menu">
-                <headerlist v-for="head in header" :name="head.title" :url="head.url" :key="head.id"></headerlist>
-            </ul>
+        <header class="header">
+            <nav>
+                <ul class="main-menu">
+                    <li class="main-menu__item" v-for="head in header">
+                        <a class="main-menu__link" target="_blank" :href="head.url" v-text="head.title"></a>
+                    </li>
+                </ul>
+            </nav>
         </header>
+
         <main class="main-container">
             <section>
-                <articles v-for="article in articles" :title="article.title" :description="article.description"
-                    :image="article.image" :key="article.id"></articles>
+                <articles v-for="article in articles" :title="article.title" :image="article.image"
+                    :description="article.description" :key="article.id"></articles>
             </section>
         </main>
+        <aside class="aside">
+            <input type="text" type="search" v-model="search">
+        </aside>
         <footer class="footer">
             <p>all reserved rights &copy</p>
         </footer>
     </div>
-    <script type="text/x-template" id="headerlist-template">
-        <li class="main-menu__item">
-            <a class="main-menu__link" target="_blank" :href="url">{{name}}</a>
-        </li>
-    </script>
 
-    <script type="text/x-template" id="articles-template">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script type="text/x-template" id="article-template">
         <article class="article">
             <h2>{{title}}</h2>
             <p>{{description}}</p>
@@ -42,7 +45,14 @@
         </article>
     </script>
 
-    <script src="js/scripts.js"></script>
+    <script>
+        const articles = {
+            props: ['title', 'description', 'image'],
+            template: '#article-template'
+
+        }
+    </script>
+    <script src="component/scripts.js"></script>
 </body>
 
 </html>
